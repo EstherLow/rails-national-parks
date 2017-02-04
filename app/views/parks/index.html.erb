@@ -1,0 +1,17 @@
+<h1>My Favourite Parks in Singapore</h1>
+
+<nav>
+<%= link_to "Add New Park", controller: "parks", action:"new" %>
+</nav>
+
+<% @parks.each do |park| %>
+<div>
+<h2><%= park.name %> </h2>
+<h3><%= park.description %></h3>
+<img src='<%= park.picture %>' height="200px" width="400px">
+<%= button_to "Delete Park", {action: "destroy", id: park.id}, method: :delete, data: { confirm: "Are you sure?"} %>
+<%= button_to "Edit", {action: "edit", id: park.id}, method: :get %>
+<% end %>
+
+
+</div>
