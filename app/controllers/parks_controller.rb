@@ -15,18 +15,21 @@ class ParksController < ApplicationController
   end
 
   def show
-    @park = Park.find(params[:name])
-    redirect_to parks_path
+    @park = Park.find(params[:id])
+    render :show
   end
 
   def edit
     @park = Park.find(params[:id])
+    render :edit
+  end
+
+  def update
+    t = Park.find(params[:id])
+    t.update(park_params)
     redirect_to parks_path
   end
 
-  # def update
-  # end
-  #
   def destroy
     Park.find(params[:id]).delete
     redirect_to parks_path

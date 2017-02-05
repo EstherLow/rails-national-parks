@@ -6,7 +6,8 @@
 
 <% @parks.each do |park| %>
 <div>
-<h2><%= park.name %> </h2>
+
+<h2><%= link_to park.name, park %></h2>
 <h3><%= park.description %></h3>
 <img src='<%= park.picture %>' height="200px" width="400px">
 <%= button_to "Delete Park", {action: "destroy", id: park.id}, method: :delete, data: { confirm: "Are you sure?"} %>

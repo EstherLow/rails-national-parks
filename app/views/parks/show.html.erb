@@ -1,10 +1,12 @@
-<h1>Parks#show</h1>
-<p>Find me in app/views/parks/show.html.erb</p>
-<h1> show one park listing </h1>
-
 <div>
-<%= @one_park.name %>
-<%= @one_park.description %>
-<img src="<%= 'one_park.picture' %>" height="200px" width="400px">
-<%= @
+<div>
+<h1><%= @park.name %></h1>
+</div>
+<div>
+<h4><%= @park.description %></h4>
+</div>
+<div>
+<img src='<%= @park.picture %>' height="200px" width="400px">
+</div>
+<%= button_to "Home", {action: "index"}, method: :get %>
 </div>

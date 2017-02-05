@@ -2,4 +2,23 @@
 <p>Find me in app/views/parks/edit.html.erb</p>
 
 
-<%= @article.inspect %>
+<div>
+  <img src='<%= @park.picture %>' height="200px" width="400px" >
+</div>
+<div>
+<%= form_for(@park) do |t| %>
+<div>
+<%= t.label :name, "Name of Park" %>
+<%= t.text_field :name %>
+</div>
+<div>
+<%= t.label :description, "Description" %>
+<%= t.text_area :description %>
+</div>
+<div>
+<%= t.label :picture, "URL for picture" %>
+<%= t.text_field :picture %>
+</div>
+<%= t.submit %>
+<% end %>
+</div>
